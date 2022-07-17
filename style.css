@@ -1,0 +1,316 @@
+html {
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 100;
+  background-color: #DDD;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+header a { 
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    border-bottom: #FFF solid 1px;
+}
+
+header a:hover { 
+    text-decoration: none;
+    border-bottom: #FFF0 solid 1px;
+}
+
+/*--- HEADER ---*/
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 1em;
+}
+
+.head-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header h2{
+    font-weight: 100;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+header h2 a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+header h2 a:hover {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+header h3{
+    font-weight: 400;
+    font-size: 1em;
+}
+
+/*--- DISPLAY ---*/
+
+.display-cont {
+    background-color: #444;
+    color: white;
+}
+
+.display-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    height: calc(500px + 3em);
+}
+
+#canvas-cont {
+    max-width: 100%;
+  width: 500px;
+  height: 500px;
+    color: #CCC;
+    text-align: center;
+    border-radius: 2em;
+}
+
+canvas {
+    border-radius: 2em;
+    /* background-color: white; */
+    background-image: url("files/loadgif2.gif");
+    background-size: cover;
+}
+
+.p5park {
+    background-color: #333;
+    width: 500px;
+    aspect-ratio: 1 / 1;
+    border-radius: 2em;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px 5px #222 inset;
+    padding: 1em;
+    gap: 1.2em;
+}
+
+.mobLand, .deskSmall {
+    display: none;
+    color: #EAA;
+}
+
+.mob-warn {
+    display: none;
+    font-size: 0.9em;
+}
+
+.about-desc {
+    display: none;
+    color:#111;
+    text-align: left;
+    padding: 1.5em;
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+.about-desc p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.about-desc p:last-child {
+    margin-top: 1em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.about-desc p:last-child a {
+    font-size: 0.9em;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3em;
+    color: #111;
+    border: #111 solid 1px;
+    border-radius: 3px;
+}
+
+.about-desc p:last-child a:hover {
+    border: #FFF solid 1px;
+}
+
+/* FOR MOBILE */
+@media (max-width: 500px) {
+    .p5park {
+        min-width: 300px;
+        width: 100vw;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (hover: none) {
+    .mob-warn {
+        display: block;
+    }
+}
+
+/* FOR MOBILE, when in LANDSCAPE*/
+@media (hover: none) and (orientation : landscape) {
+    .plsClick {
+        display: none;
+    }
+    .mobLand {
+        display: block;
+    }
+}
+
+/* FOR DESKTOP, when too small */
+@media (hover: hover) and (max-width: 500px) { /* when supported */
+    .p5park {
+        min-width: 300px;
+        width: 100vw;
+        aspect-ratio: 1 / 1;
+    }
+    .plsClick {
+        display: none;
+    }
+    .mobLand {
+        display: none;
+    }
+    .deskSmall {
+        display: block;
+    }
+}
+
+.canvSides {
+    display: block;
+    width: calc((100% - 500px) / 2);
+}
+
+#closeMir {
+    display: none;
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+
+#closeMir span {
+    font-size: 0.8em;
+    vertical-align:text-top;
+}
+
+#closeMir a {
+    display: block;
+    color: #333;
+    display: inline-block;
+    background-color: #CCC;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+#closeMir a:hover {
+    background-color: #F77;
+    color: #FFF;
+}
+
+@media (max-width: 600px) {
+    .display-box {
+        height: auto;
+    }
+    #canvas-cont {
+        width: 100vw;
+    }
+    .canvSides {
+        width: 100vw;
+        text-align: center;
+    }
+    #closeMir {
+        margin-left: 0em;
+        margin-top: 0.5em;
+    }
+}
+
+/*--- GALLERY ---*/
+
+.gallery-cont {
+    background-color: #F4F4F4;
+    font-size: 0.9em;
+}
+
+.gallery-cont ul {
+    padding: 2em;
+    display: flex;
+    gap: 2em;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+}
+
+.gallery-cont li {
+    list-style: none;
+}
+
+.gallery-cont li a {
+    display: block;
+    background-color: #DDD; /*DELETE LATER*/
+    border-radius: 1em;
+    width: 10em;
+    min-width: 10em;
+    height: 10em;
+    min-height: 10em;
+    padding: 1em;
+    line-height: 1.5em;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #CCCCCC;
+    text-decoration: none;
+    color: #222;
+    
+}
+
+.gallery-cont li a:hover {
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+.gallery-cont li a.clicked {
+    background-color: #FFF;
+    position: relative;
+    left: 2px;
+    top: 2px; 
+    box-shadow: -2px -2px 5px #CCCCCC;
+}
+
+.gallery-cont li a.clicked:hover {
+    animation: none;
+}
+
+
+@keyframes glowing {
+    from {
+        background-color: #DDD;
+    }
+    to {
+        background-color: #AAA;
+        color: #000;
+    }
+}
+
