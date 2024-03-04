@@ -7,5 +7,5 @@ Humans are very fascinated by our own likeness; one of the earliest documentatio
 
 The project utilizes the underlying technologies used by everyday software and popular apps to consider how they shape our perception.
 
-See it live here: [https://massagedmirrors.mattelim.repl.co
+See it live here: [https://massagedmirrors.netlify.app
 ](https://massagedmirrors.netlify.app/)
